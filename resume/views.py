@@ -28,4 +28,4 @@ def resume(request):
 
     context['form'] = form
 
-    return render(request, 'resume/resume.html', context)
+    return render(request, 'home.html', context)
