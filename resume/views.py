@@ -21,7 +21,7 @@ def resume(request):
                 send_mail(subject, message, 'iamkomolafe.o.s@gmail.com', ['iamkomolafe.o.s@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect ("home")
+            return redirect("home")
         context['form'] = form
       
     form = ContactForm()
