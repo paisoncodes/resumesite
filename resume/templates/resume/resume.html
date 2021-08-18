@@ -1,0 +1,246 @@
+{% load static %}
+
+<style type="text/css">
+    .profile_picture{
+        width: 210px;
+        height: 240px;
+        margin:10px;
+        background: url("{% static 'img/profilepic.jpg' %}") 100% /210px no-repeat;
+    }
+    .text_area {
+        width: 250px;
+        height: 180px;
+        margin-top: 20px;
+        font-size: 16px;
+        font-family: 'Lucida--Sans--Unicode';
+    }
+    .names {
+        width: 250px;
+        height: 40px;
+        font-size: 16px;
+        font-family: 'Lucida--Sans--Unicode';
+        margin-top: 20px;
+
+    }
+    .date {
+        margin-left: 30px;
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .img {
+        position: relative;
+        left: 20px;
+        right: 10px;
+        top: 20px;
+        width: 50px;
+        height: 50px;
+        background: black;
+        border: 1px solid #403F44;
+        
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RESUME</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
+        <link href="//db.onlinewebfonts.com/c/26c724b3b181aad246aa1321eaa9ea21?family=Lucida+Sans+Unicode" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/styles.css' %}" rel='stylesheet' type="text/css"/>
+    </head>
+    <body>
+    <!-- MAIN CONTAINER -->
+        <div id="main_container">
+        <!-- HEADER -->
+        <div id="header">
+            <!-- LOGOTYPE/NAME -->
+            <div class="header_logotype_container">
+            <h1 class="logotype_name">Olatunji <span class="purple">Komolafe</span></h1>
+            <h2 class="logotype_occupation">Backend Web Developer</h2>
+            </div>
+            <!-- MAIN MENU -->
+            <div class="header_menu_container">
+                <div class="clear"></div>
+                <ul class="header_menu horizontal_list">
+                    <li><a class="no_border purple" href="#">Profile</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#exp">Work Experience</a></li>
+                    <li><a href="#projects">Featured Projects</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- LEFT COL -->
+        <div id="left_col">
+            <div class="profile_frame">
+            <div class="profile_picture"></div>
+            </div>
+            <div class="hello_content">
+            <h2>Hello!</h2>
+            <p>I'm passionate about technology and music, hardworker and a fast-learner and have high perseverence which made me more dedicated to growth.</p>
+            </div>
+            <div class="contact_details_content">
+            <h2>Contact details</h2>
+            <p class="purple">Phone:</p>
+            <p>+234(0)907-924-6074</p>
+            <p class="purple">Email:</p>
+            <a href="mailto:iamkomolafe.o.s@gmail.com" style="text-decoration: none;">iamkomolafe.o.s@gmail.com</a>
+            </div>
+            <div>
+            <h2>Contact me</h2>
+            <form method='POST' id="myForm">
+                {% csrf_token %}
+                <input class="names" type="text" name="full_name" placeholder="Your Name">
+                <input class="names" type="email" name="email" placeholder="Email">
+                <textarea class="text_area" name="message" cols="30" rows="10" placeholder="Send me a message..."></textarea>
+                
+                <a href="javascript:{}" onclick="document.getElementById('myForm').submit();" class="send_message_button">
+                <span class="cut1"></span>
+                <span class="cut2"></span>
+                <span class="content"> Send message <span class="fontawesome-double-angle-right"></span></span>
+                </a>
+            </form>            
+            </div>
+            <div class="get_social_content">
+            <h2>Get social</h2>
+            <ul class="social_icons horizontal_list">
+                <li><a class="github" href="https://www.github.com/paisoncodes"><span class="entypo-github-circled"></span><span class="invisible">GitHub</span></a></li>
+                <li><a class="twitter" href="https://twitter.com/paisoncodes"><span class="entypo-twitter-circled"></span><span class="invisible">Twitter</span></a></li>
+                <li><a class="linkedin" href="https://www.linkedin.com/in/paisoncodes/en"><span class="entypo-linkedin-circled"></span><span class="invisible">LinkedIn</span></a></li>
+            </ul>
+            </div>
+        </div>
+        <!-- PROFILE CONTENT -->
+        <div id="content_container">				
+            <div class="block">
+            <h1>Profile</h1>
+            <blockquote class="profile_quote">
+                <p style="font-size: 18px;">"There is no end to education. It is not that you read a book, pass an examination, and finish with education. The whole of life, from the moment you are born to the moment you die, is a process of learning."</p>
+                <p>Jiddu Krishnamurti.</p>
+                <span class="entypo-quote"></span>
+            </blockquote>
+            </div>
+            <div class="block">
+            <h2>A few words about me</h2>
+            <p style="font-size: 18px;">I had it really tough getting ahead in tech. Though at some point I had people who believed in me and gave me what I thought was "it" at the moment. After some years of moving in circles, I finally found my way. I know there are some people out there just like me and I hope to reach them someday and help them early. So, I'm gonna be the person I always dreamed I'd be, an <b>INSPIRATION</b>.</p>				
+            </div>
+            <div class="horizontal_line">
+            <div class="line_left"></div>
+            <div class="left_circle"></div>
+            <div class="central_circle"></div>
+            <div class="right_circle"></div>
+            <div class="line_right"></div>
+            </div>
+            <div class="block">
+            <h2>Philosophy</h2>
+            <p style="font-size: 18px;">I belive in ethic and moral not in imposed rules that you "have to" do or follow.</p>
+            <div class="philosophy_content">
+                <p style="font-size: 18px;">I believe there's more to lif than what is taught by the Education, Societal and Religious Institutions. I think the best way to live a fulfilled life is to discover one's self and once that is done, we'd know it is our duty to take care of the world and treat others as one would like others to treat oneself. This way of perceiving reality affects my beliefs and my way of behaving. Summarizing on several points:</p>
+                <ul>
+                <li style="font-size: 18px;">Honest</li>
+                <li style="font-size: 18px;">Respectful</li>
+                <li style="font-size: 18px;">Open-minded</li>
+                <li style="font-size: 18px;">Coherent</li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            </div>
+            <div class="horizontal_line">
+            <div class="line_left"></div>
+            <div class="left_circle"></div>
+            <div class="central_circle"></div>
+            <div class="right_circle"></div>
+            <div class="line_right"></div>
+            </div>
+            <div class="block">
+            <h2>Interests & Hobbies</h2>
+            <p style="font-size: 18px;">I'm passionate about technology and music, both determine almost all my interests and hobbies:</p>
+            <ul>
+                <li>Streaming new songs</li>
+                <li>Having new experiences</li>
+                <li>Developing web apps</li>
+                <li>Mobile Gaming</li>
+                <li>Manga and Anime</li>
+            </ul>
+            </div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+                </div>
+                <div class="block">
+                <h2 id="skills">Skills</h2>
+                <p style="font-size: 18px;">During the past few years of my adventure into tech, I've managed to gather the following skillset:</p>
+                <ul>
+                    <li>Backend Web Development (Python & Java) </li>
+                    <li>HTML & CSS</li>
+                    <li>Data Analyst</li>
+                    <li>Data Scientist</li>
+                </ul>
+            </div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+                </div>
+                <div class="block">
+                <h2 id="exp">Work Experience </h2>
+                <p style="font-size: 22px;">Zuri Internship
+                    <a href="https://ingressive.org" style="font-size: 18px;">
+                        <img class="img" src="{% static 'img/i4glogo.png' %}" />
+                    </a>
+                    <a href="https://internship.zuri.com" style="font-size: 18px;">
+                        <img class="img" src="{% static 'img/hnglogo.png' %}" />
+                    </a> 
+                </p>
+                <ul class="job">
+                    <li>Backend Intern</li>
+                    <p class="date purple">August '21 -- till date</p>
+                </ul>
+                
+                <p style="font-size: 22px;">Zuri Training
+                    <a href="https://ingressive.org">
+                        <img class="img" src="{% static 'img/i4glogo.png' %}" />
+                    </a>
+                    <a href="https://training.zuri.com">
+                        <img class="img" src="{% static 'img/zurilogo.png' %}" />
+                    </a> 
+                </p>
+                <ul class="job">
+                    <li>Backend Trainee</li>
+                    <p class="date purple">April '21 -- July '21</p>
+                </ul>
+            </div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+                </div>
+                <div class="last block">
+                <h2 id="projects">Featured Projects</h2>
+                <p style="font-size: 18px;">Some of my personal and featured projects are listed below:</p>
+                <ul>
+                    <li><a href="https://itarj-console.herokuapp.com" style="font-size: 22px; text-decoration: none;">ITARJ-console</a></li>
+                    <p class="date purple">A web application that helps users verify if a particular job is fake. Users can also post fake Jobs on the application too.</p>
+                    <li><a href="https://amablog.herokuapp.com" style="font-size: 22px; text-decoration: none;">A-M-A Blog</a></li>
+                    <p class="date purple">A simple blog website built with HTML, CSS and Python(Django)</p>
+                </ul>
+                <p style="font-size: 18px;">You can check my <a href="https://github.com/paisoncodes" class="purple" style="text-decoration: none; font-size: 18px;">github</a> profile for more projects that haven't been or can't be published.</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!-- FOOTER -->
+        <div id="footer">
+            <p class="footer_name">Olatunji Komolafe CV 2021 ---------------------------------- Template from <a href="https://codepen.io/jlalovi/pen/NPeBqZ">Codepen</a></p>
+        </div>
+        </div>
+    </body>
+</html>
