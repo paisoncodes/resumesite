@@ -29,14 +29,15 @@
     }
     .img {
         position: relative;
-        left: 20px;
-        right: 10px;
+        left: 5px;
         top: 20px;
         width: 50px;
         height: 50px;
         background: black;
         border: 1px solid #403F44;
-        
+    }
+    .space {
+        padding: 20px;
     }
 </style>
 
@@ -92,9 +93,10 @@
             <h2>Contact me</h2>
             <form method='POST' id="myForm">
                 {% csrf_token %}
-                <input class="names" type="text" name="full_name" placeholder="Your Name">
+                <input class="names" type="text" name="full_name" placeholder="Full Name">
                 <input class="names" type="email" name="email" placeholder="Email">
-                <textarea class="text_area" name="message" cols="30" rows="10" placeholder="Send me a message..."></textarea>
+                <input class="names" type="text" name="subject" placeholder="Subject">
+                <textarea class="text_area" name="message" cols="30" rows="10" placeholder="Leave a message..."></textarea>
                 
                 <a href="javascript:{}" onclick="document.getElementById('myForm').submit();" class="send_message_button">
                 <span class="cut1"></span>
@@ -176,7 +178,8 @@
                 <h2 id="skills">Skills</h2>
                 <p style="font-size: 18px;">During the past few years of my adventure into tech, I've managed to gather the following skillset:</p>
                 <ul>
-                    <li>Backend Web Development (Python & Java) </li>
+                    <li>Backend Web Development (Python) </li>
+                    <li>Java (Springboot) </li>
                     <li>HTML & CSS</li>
                     <li>Data Analyst</li>
                     <li>Data Scientist</li>
@@ -191,10 +194,12 @@
                 </div>
                 <div class="block">
                 <h2 id="exp">Work Experience </h2>
-                <p style="font-size: 22px;">Zuri Internship
+                <p style="font-size: 22px;">Hotels.ng (HNG) Internship
+                    <span class="space"></span>
                     <a href="https://ingressive.org" target="_blank">
                         <img class="img" src="{% static 'img/i4glogo.png' %}" />
                     </a>
+                    <span class="space"></span>
                     <a href="https://hng.tech" target="_blank">
                         <img class="img" src="{% static 'img/hnglogo.png' %}" />
                     </a> 
@@ -205,9 +210,11 @@
                 </ul>
                 
                 <p style="font-size: 22px;">Zuri Training
+                    <span class="space"></span>
                     <a href="https://ingressive.org" target="_blank">
                         <img class="img" src="{% static  'img/i4glogo.png' %}" />
                     </a>
+                    <span class="space"></span>
                     <a href="https://zuri.team" target="_blank">
                         <img class="img" src="{% static 'img/zurilogo.png' %}" />
                     </a> 
@@ -239,7 +246,7 @@
         <div class="clear"></div>
         <!-- FOOTER -->
         <div id="footer">
-            <p class="footer_name">Olatunji Komolafe CV 2021 ---------------------------------- Template from <a href="https://codepen.io/jlalovi/pen/NPeBqZ">Codepen</a></p>
+            <p class="footer_name">Olatunji Komolafe CV 2021 ---------------------------------------------------------------------------------------------------------------------------------------- Template from <a href="https://codepen.io/jlalovi/pen/NPeBqZ">Codepen</a></p>
         </div>
         </div>
     </body>

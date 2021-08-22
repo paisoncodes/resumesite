@@ -10,14 +10,14 @@ def resume(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = "Resume Contact"
+            subject = form.cleaned_data['subject']
             body = {
 			'full_name' : form.cleaned_data['full_name'],
             'email'     : form.cleaned_data['email'],
 			'message'   : form.cleaned_data['message'], 
 			}
             message = "\n\n".join(body.values())
-
+            form.save()
             try:
                 send_mail(subject, message, 'iamkomolafe.o.s@gmail.com', ['iamkomolafe.o.s@gmail.com'])
             except BadHeaderError:
